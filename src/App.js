@@ -1,6 +1,6 @@
 import './App.css';
 import Titulo from './componentes/Header/header';
-import ListaTareas from './componentes/ListaTareas/listaTareas';
+import ListaTareas from './componentes/ListaTareas/ListaTareas';
 import Footer from './componentes/footer/Footer';
 
 function App() {

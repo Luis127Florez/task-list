@@ -2,10 +2,20 @@ import React from "react";
 import  {AiFillDelete}  from "react-icons/ai";
 import './BtnEliminar.css';
 
-function BtnEliminar() {
-return(
-    <AiFillDelete className="btndelete"/>
-)
+function BtnEliminar(props) {
+
+    function eliminar() {
+        if (confirm('Esta seguro De Eliminar esta tarea ?')) {
+            
+            localStorage.removeItem(props.item);
+            alert("Tarea Eliminada")
+            window.location.reload(false);
+        }
+    }
+
+    return(
+        <AiFillDelete onClick={eliminar} className="btndelete"/>
+    )
 }
 
 export default BtnEliminar 
