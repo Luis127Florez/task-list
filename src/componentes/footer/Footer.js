@@ -4,7 +4,7 @@ import './Footer.css';
 function Footer() {
 
     function clearAll () {
-        if (confirm("Estas seguro de limpiar Todo")) {
+        if (window.confirm("Estas seguro de limpiar Todo")) {
             localStorage.clear();
             window.location.reload(false); 
 

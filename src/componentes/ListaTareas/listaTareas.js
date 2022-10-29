@@ -16,21 +16,10 @@ function ListaTareas () {
                 Data.push(localStorage.getItem(i))
             }
         }
-        /*  localStorage.map((x)=>{
-            Data.push(x)
-            Data.push(localStorage.getItem(i))
-            
-        }) */
-        /* for (let i = 0; i < localStorage.length ; i++) {
-            Data.push(localStorage.getItem());
-        }  */
         console.log(Data)
         
     }
-
-
         Mostrar();
-    
 
     const [texto, setTexto] = useState("");
     const [contador, setContador ] = useState(Data.length);

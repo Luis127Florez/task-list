@@ -5,7 +5,7 @@ import './BtnEliminar.css';
 function BtnEliminar(props) {
 
     function eliminar() {
-        if (confirm('Esta seguro De Eliminar esta tarea ?')) {
+        if (window.confirm('Esta seguro De Eliminar esta tarea ?')) {
             
             localStorage.removeItem(props.item);
             alert("Tarea Eliminada")
