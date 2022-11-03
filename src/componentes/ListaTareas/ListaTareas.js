@@ -1,6 +1,6 @@
 import './listaTareas.css';
 import Tarea from '../Tarea/Tarea';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 
@@ -22,23 +22,27 @@ function ListaTareas () {
         Mostrar();
 
     const [texto, setTexto] = useState("");
-    const [contador, setContador ] = useState(Data.length);
 
     const handelImputChange = ({target})=>{
         setTexto(target.value)
     }
 
-    useEffect(()=>{
-        console.log(contador)
-    },[contador])
+
 
 
     function guardar (e) {
         if (texto !== "") {
-            localStorage.setItem(contador,texto)
+            for ( const  i in localStorage) {
+                if (!isNaN(i)) {
+                    if (ultimo < Number(i)) {
+                        ultimo = Number(i)
+                    }
+
+                }
+            }
+            localStorage.setItem((ultimo + 1 ),texto)
             alert("Nueva Tarea agregada");
             setTexto("")
-            setContador(ultimo + 1);
             Mostrar()
             
         }else{
