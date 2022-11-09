@@ -1,53 +1,18 @@
 import './listaTareas.css';
 import Tarea from '../Tarea/Tarea';
 import { useState } from 'react';
-
+import useGuardar from '../Hooks/useGuardar';
+import useMostrar from '../Hooks/useMostrar';
 
 
 function ListaTareas () {
-   let Data = [];
-   let ultimo = 0;
-    
-    function Mostrar () {
-        
-        for ( const  i in localStorage) {
-            if (!isNaN(i)) {
-                ultimo = Number(i)
-                Data.push(localStorage.getItem(i))
-            }
-        }
-        console.log(Data)
-        
-    }
-        Mostrar();
+
+    const { ultimo , Data } = useMostrar();
 
     const [texto, setTexto] = useState("");
 
     const handelImputChange = ({target})=>{
         setTexto(target.value)
-    }
-
-
-
-
-    function guardar (e) {
-        if (texto !== "") {
-            for ( const  i in localStorage) {
-                if (!isNaN(i)) {
-                    if (ultimo < Number(i)) {
-                        ultimo = Number(i)
-                    }
-
-                }
-            }
-            localStorage.setItem((ultimo + 1 ),texto)
-            alert("Nueva Tarea agregada");
-            setTexto("")
-            Mostrar()
-            
-        }else{
-            alert("Añada una descripcion")
-        }
     }
 
     function BuscarId(x) {
@@ -58,14 +23,17 @@ function ListaTareas () {
             }
         }
     }
+
+        
+    
  
     return(
         
         <div className='listaTareas'>
             <center>
-            <form onSubmit={guardar}>
+            <form onSubmit={(e)=> e.preventDefault()}>
               <input className='inputTarea' value={texto} type='text' onChange={handelImputChange} placeholder="Add your new todo"/>
-              <button className='buttonTarea' type='submit'> + </button>
+              <button onClick={useGuardar(texto , ultimo) } className='buttonTarea' type='submit'> + </button>
             </form>
             <br/>
             <div id="tareas" className='tareas'>
