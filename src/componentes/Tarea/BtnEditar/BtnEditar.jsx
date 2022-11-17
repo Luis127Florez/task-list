@@ -8,9 +8,14 @@ function BtnEditar(props) {
 
         let nuevaTarea = "";
         nuevaTarea = prompt("Edite",props.tarea);
-        localStorage.setItem(props.item, nuevaTarea);
-        alert("Tarea Modificada");
-        window.location.reload(false); 
+        if (nuevaTarea) {
+            localStorage.setItem(props.item, nuevaTarea);
+            alert("Tarea Modificada");
+            window.location.reload(false); 
+        }else{
+            alert("No lleno el campo de texto ");
+        }
+        
         
     }
 

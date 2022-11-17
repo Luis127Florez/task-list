@@ -14,7 +14,7 @@ function Footer() {
 
     return(
         <div className="Footer">
-            <p>you has {localStorage.length} pending tasks</p>
+            <p>Total tasks {localStorage.length} </p>
             <button onClick={clearAll} className="btnclear">Clear All</button>
         </div>
     )    

@@ -5,7 +5,7 @@ import { useState } from 'react';
 
 
 function ListaTareas () {
-   let Data = [];
+   const Data = [];
    let ultimo = 0;
     
     function Mostrar () {
@@ -26,8 +26,6 @@ function ListaTareas () {
     const handelImputChange = ({target})=>{
         setTexto(target.value)
     }
-
-
 
 
     function guardar (e) {
