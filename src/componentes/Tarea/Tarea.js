@@ -15,7 +15,7 @@ function Tarea (props) {
         }else{
             setEstado("realizado");
         }
-    }  
+    }     
 
     return(
         <div className={actualEstado}>

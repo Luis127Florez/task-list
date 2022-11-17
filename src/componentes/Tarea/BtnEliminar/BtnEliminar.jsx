@@ -1,17 +1,11 @@
 import React from "react";
 import  {AiFillDelete}  from "react-icons/ai";
 import './BtnEliminar.css';
+import useList from "../../Hooks/useList";
 
 function BtnEliminar(props) {
 
-    function eliminar() {
-        if (window.confirm('Esta seguro De Eliminar esta tarea ?')) {
-            
-            localStorage.removeItem(props.item);
-            alert("Tarea Eliminada")
-            window.location.reload(false);
-        }
-    }
+    const {eliminar} =  useList("", props.item) 
 
     return(
         <AiFillDelete onClick={eliminar} className="btndelete"/>

@@ -1,7 +1,7 @@
 import './listaTareas.css';
 import Tarea from '../Tarea/Tarea';
 import { useState } from 'react';
-import useGuardar from '../Hooks/useGuardar';
+import useList from '../Hooks/useList';
 import useMostrar from '../Hooks/useMostrar';
 
 
@@ -11,6 +11,8 @@ function ListaTareas () {
 
     const [texto, setTexto] = useState("");
 
+    const{ guardar }= useList(texto, ultimo);
+    
     const handelImputChange = ({target})=>{
         setTexto(target.value)
     }
@@ -23,17 +25,14 @@ function ListaTareas () {
             }
         }
     }
-
-        
-    
  
     return(
         
         <div className='listaTareas'>
             <center>
-            <form onSubmit={(e)=> e.preventDefault()}>
+            <form onSubmit={guardar}>
               <input className='inputTarea' value={texto} type='text' onChange={handelImputChange} placeholder="Add your new todo"/>
-              <button onClick={useGuardar(texto , ultimo) } className='buttonTarea' type='submit'> + </button>
+              <button  className='buttonTarea' type='submit'> + </button>
             </form>
             <br/>
             <div id="tareas" className='tareas'>

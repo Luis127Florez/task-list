@@ -2,7 +2,7 @@ let ultimo = 0;
 let Data = [];
 
     function useMostrar () {
-        
+        Data = []
         for ( const  i in localStorage) {
             if (!isNaN(i)) {
                 ultimo = Number(i)
