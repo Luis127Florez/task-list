@@ -1,6 +1,6 @@
 //import useMostrar from "./useMostrar";
 
-function useList (texto, ultimo) {
+function useList (texto, ultimo, dess) {
 
     const guardar=() => {
         if (texto !== "") {
@@ -12,7 +12,7 @@ function useList (texto, ultimo) {
     
                 }
             }
-            localStorage.setItem((ultimo + 1 ),texto)
+            localStorage.setItem((ultimo + 1 ), JSON.stringify({tarea:texto, descripcion:dess}))
             return alert("Nueva Tarea agregada");
     
             
@@ -24,8 +24,10 @@ function useList (texto, ultimo) {
     function editar () {
 
         let nuevaTarea = "";
+        let nuevadess = "";
         nuevaTarea = prompt("Edite",texto);
-        localStorage.setItem(ultimo, nuevaTarea);
+        nuevadess = prompt("Edite Descripcion",dess);
+        localStorage.setItem(ultimo, JSON.stringify({tarea:nuevaTarea, descripcion:nuevadess}));
         alert("Tarea Modificada");
         window.location.reload(false); 
         

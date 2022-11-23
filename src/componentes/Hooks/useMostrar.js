@@ -6,7 +6,7 @@ let Data = [];
         for ( const  i in localStorage) {
             if (!isNaN(i)) {
                 ultimo = Number(i)
-                Data.push(localStorage.getItem(i))
+                Data.push(JSON.parse(localStorage.getItem(i)))
             }
         }
         console.log(Data)
