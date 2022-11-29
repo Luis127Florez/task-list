@@ -1,14 +1,10 @@
 import './App.css';
-import Titulo from './componentes/Header/header';
-import ListaTareas from './componentes/ListaTareas/ListaTareas';
-import Footer from './componentes/footer/Footer';
+import Enrutador from './Enrutador';
 
 function App() {
   return (
     <div className="App">
-      <Titulo />
-      <ListaTareas/>
-      <Footer/>
+      <Enrutador/>
     </div>
   );
 }
