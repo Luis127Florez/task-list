@@ -7,6 +7,7 @@ function ListTask() {
     return(
         <div>
             <Menu/>
+            <br />
             <Titulo/>
             <ListaTareas/>
             <Footer/>

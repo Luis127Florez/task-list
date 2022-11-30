@@ -5,7 +5,7 @@ function useList (texto, ultimo, dess) {
     const guardar=() => {
         if (texto !== "") {
             for ( const  i in localStorage) {
-                if (!isNaN(i)) {
+                if (!isNaN(i) && localStorage[i] !== "light") {
                     if (ultimo < Number(i)) {
                         ultimo = Number(i)
                     }

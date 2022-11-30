@@ -1,10 +1,10 @@
 import './header.css';
-
+import { Text } from '@chakra-ui/react';
 function titulo () {
     return(
-        <div className='titulo' >
-           <h1>Todo App</h1>
-        </div>
+       
+         <Text fontSize='3xl'>Todo App</Text>
+   
      )
 }
 

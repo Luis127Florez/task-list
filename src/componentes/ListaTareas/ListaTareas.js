@@ -27,11 +27,14 @@ function ListaTareas () {
     function BuscarId(x) {
         let obj;  
         for (const key in localStorage ) {
-            obj = JSON.parse(localStorage.getItem(key));
-            if(obj.tarea === x){
-                return key
+            if (!isNaN(key) && localStorage[key] !== "light") {
+                obj = JSON.parse(localStorage.getItem(key));
+                if(obj.tarea === x){
+                    return key
 
+                }
             }
+            
         }
     }
  

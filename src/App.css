@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   display: flex;
-  flex-direction: column;
+
 }
 
 
@@ -19,7 +19,7 @@ html, body{
 
 .App{
   width: 40%;
-  height: 68%;
+  height: 86%;
   padding: 8px;
   border-style: ridge;
   

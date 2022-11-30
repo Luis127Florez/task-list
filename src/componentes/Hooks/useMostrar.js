@@ -4,7 +4,7 @@ let Data = [];
     function useMostrar () {
         Data = []
         for ( const  i in localStorage) {
-            if (!isNaN(i)) {
+            if (!isNaN(i) && localStorage[i] !== "light") {
                 ultimo = Number(i)
                 Data.push(JSON.parse(localStorage.getItem(i)))
             }
